@@ -13,7 +13,7 @@ app.use(express.json());
 // Middlewares
 app.use(require("./router/auth.js"));
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 // app.get("/", (req,res) => {
 //     res.send(`Hello from the server`)
@@ -35,6 +35,15 @@ app.get("/signin", (req, res) => {
 app.get("/signup", (req, res) => {
   res.send(`Hello from the signup server`);
 });
+
+
+//HEROKU
+
+if(process.env.NODE_ENV == "production"){
+  app.use(express.static("frontend/build"))
+}
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on at PORT no ${PORT}`);
