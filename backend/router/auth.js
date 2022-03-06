@@ -11,9 +11,9 @@ require("../db/conn.js");
 const User = require("../model/userSchema.js");
 const authenticate = require("../middlewares/authenticate.js")
 
-router.get("/", (req, res) => {
-  res.send("Hello World from auth.js");
-});
+// router.get("/", (req, res) => {
+//   res.send("Hello World from auth.js");
+// });
 
 //REGISTER ROUTE
 // using Promisses!!!!!
